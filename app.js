@@ -15,8 +15,10 @@ const promotionRouter = require('./routes/promotionRouter');
 const partnerRouter =  require('./routes/partnerRouter');
 const { isBuffer } = require('util');
 const authenticate = require('./authenticate');
+const config = require('./config');
 
-const url = 'mongodb://localhost:27017/nucampsite';
+//const url = 'mongodb://localhost:27017/nucampsite';
+const url = config.mongoUrl;
 const connect = mongoose.connect(url, {
     useCreateIndex: true,
     useFindAndModify: false,
